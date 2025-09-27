@@ -1,9 +1,9 @@
 import { enToHe, heToEn } from './mappings'
 
-const HEBREW_REGEX = /[֐-׿]/
+const HEBREW_REGEX = /[\u0590-\u05FF]/
 const ENGLISH_REGEX = /[A-Za-z]/
 
-export const countHebrew = (s: string) => (s.match(/[֐-׿]/g) || []).length
+export const countHebrew = (s: string) => (s.match(/[\u0590-\u05FF]/g) || []).length
 export const countEnglish = (s: string) => (s.match(/[A-Za-z]/g) || []).length
 
 export function convertEnToHe(text: string): string {
