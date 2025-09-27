@@ -1,4 +1,3 @@
-import React from 'react'
 import { TextField, InputAdornment, IconButton, Tooltip } from '@mui/material'
 import ClearIcon from '@mui/icons-material/Clear'
 

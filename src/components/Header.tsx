@@ -1,5 +1,4 @@
-import React from 'react'
-import { AppBar, Toolbar, Typography, Chip } from '@mui/material'
+import { AppBar, Toolbar, Typography } from '@mui/material'
 import BoltIcon from '@mui/icons-material/Bolt'
 
 export function Header() {

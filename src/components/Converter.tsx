@@ -1,15 +1,15 @@
 import React from 'react'
 import { Box, Button, Card, CardContent, Chip, Snackbar, Typography } from '@mui/material'
-import { autoConvert, convertEnToHe, convertHeToEn, type Direction } from '../lib/convert'
+import { autoConvert, convertEnToHe, convertHeToEn } from '../lib/convert'
 import { InputArea } from './InputArea'
 import { OutputArea } from './OutputArea'
 
 export function Converter() {
    const [input, setInput] = React.useState('')
    const [output, setOutput] = React.useState('')
-   const [mode, setMode] = React.useState<Direction>('auto')
    const [copied, setCopied] = React.useState(false)
 
+   const mode = 'auto'
    const performConvert = React.useCallback(() => {
       if (!input.trim()) return setOutput('')
       if (mode === 'auto') {

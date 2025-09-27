@@ -1,4 +1,3 @@
-import React from 'react'
 import { CssBaseline, ThemeProvider, Container, Box, Chip } from '@mui/material'
 import { theme } from './theme'
 import { Header } from './components/Header'
