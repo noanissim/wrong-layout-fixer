@@ -1,25 +1,21 @@
-import React from 'react'
+import React, { useState, useCallback, useEffect } from 'react'
 import { Box, Button, Card, CardContent, Chip, Snackbar, Typography } from '@mui/material'
-import { autoConvert, convertEnToHe, convertHeToEn } from '../lib/convert'
+import { autoConvert } from '../lib/convert'
 import { InputArea } from './InputArea'
 import { OutputArea } from './OutputArea'
 
 export function Converter() {
-   const [input, setInput] = React.useState('')
-   const [output, setOutput] = React.useState('')
-   const [copied, setCopied] = React.useState(false)
+   const [input, setInput] = useState('')
+   const [output, setOutput] = useState('')
+   const [copied, setCopied] = useState(false)
 
-   const mode = 'auto'
-   const performConvert = React.useCallback(() => {
+   const performConvert = useCallback(() => {
       if (!input.trim()) return setOutput('')
-      if (mode === 'auto') {
-         const res = autoConvert(input)
-         setOutput(res.value)
-      } else if (mode === 'en→he') setOutput(convertEnToHe(input))
-      else setOutput(convertHeToEn(input))
-   }, [input, mode])
+      const res = autoConvert(input)
+      setOutput(res.value)
+   }, [input])
 
-   React.useEffect(() => {
+   useEffect(() => {
       performConvert()
    }, [performConvert])
 
